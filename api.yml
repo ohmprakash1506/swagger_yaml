@@ -1,0 +1,36 @@
+openapi: 3.0.0
+
+info:
+  title: Swagger API Docs..
+  description: This a basic documantation of an API using Swagger
+  version: 1.0.0
+  contact:
+    name: Ohm Prakash
+    email: ohm@ccl.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+  - url: "http://localhost:8000/"
+    description: this a local server
+
+paths:
+  /string:
+    get:
+      description: This api returns a string
+      summary: returns string
+      responses:
+        200:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/String"
+        400:
+          description: Error
+
+components:
+  schemas:
+    String:
+      type: string
